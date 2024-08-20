@@ -12,7 +12,7 @@ async function getStatus(e) {
     const data = await response.json();
 
     if (response.ok) {
-        displayStatus(data.expiry);
+        displayStatus(data);
     } else {
         throw new Error(data.error);
 
