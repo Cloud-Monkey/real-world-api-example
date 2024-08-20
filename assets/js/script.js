@@ -12,11 +12,15 @@ async function getStatus(e) {
     const data = await response.json();
 
     if (response.ok) {
-        console.log(data.expiry);
+        displayStatus(data.expiry);
     } else {
         throw new Error(data.error);
         
     }
+}
+
+function displayStatus(data) {
+    
 }
 
 // API key expires on 20-08-2025
