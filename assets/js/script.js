@@ -16,11 +16,19 @@ async function postForm(e) {
         body: form,
     })
 
+    const data = await response.json();
+
+    if (response.ok) {
+        displayErrors(data)
+    } else {
+        throw new Error(data.error)
+    }
+
 }
 
+function displayErrors(data) {
 
-
-// API key expires on 20-08-2025
+}
 
 async function getStatus(e) {
     const queryString = `${API_URL}?api_key=${API_KEY}`;
