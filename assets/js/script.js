@@ -15,12 +15,20 @@ async function getStatus(e) {
         displayStatus(data.expiry);
     } else {
         throw new Error(data.error);
-        
+
     }
 }
 
 function displayStatus(data) {
-    
+
+    let heading = "API Key status";
+    let results = `<div>Your key is valid until</div>`;
+    results += `<div class="key-status">${data.expiry}</div>`;
+
+    const modalTitle = document.getElementById("resultsModalTitle").innerText = heading;
+    const resultContent = document.getElementById("results-content").innerText = results;
+
+    resultsModal.show()
 }
 
 // API key expires on 20-08-2025
