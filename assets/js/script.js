@@ -26,7 +26,7 @@ function displayStatus(data) {
     results += `<div class="key-status">${data.expiry}</div>`;
 
     const modalTitle = document.getElementById("resultsModalTitle").innerText = heading;
-    const resultContent = document.getElementById("results-content").innerText = results;
+    const resultContent = document.getElementById("results-content").innerHTML = results;
 
     resultsModal.show()
 }
